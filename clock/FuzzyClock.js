@@ -3,13 +3,15 @@
  */
 
 var fuzzyMap = require('./mapping.json');
+var moment = require('moment');
 var fuzzyClock = {
-    getTime: function (hour, minute, timezone) {
+    getTime: function (timezone) {
         if(timezone) {
-            // convert
+            // convert if applicable
         }
+        var hour = new moment().hour();
         console.log(hour);
-        return fuzzyMap['01'];
+        return 'About ' + fuzzyMap[hour];
     }
 }
 
